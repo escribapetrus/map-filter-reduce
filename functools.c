@@ -15,3 +15,10 @@ Node *filter(fp fp, Node *n){
   else
     return filter(fp, n->next);
 }
+
+int reduce(gp gp, int acc, Node *n){
+  if (n == 0) return acc;
+
+  int val = (*gp)(n->data, acc);
+  return reduce(gp, val, n->next);
+}

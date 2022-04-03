@@ -4,9 +4,8 @@ typedef struct Node {
 } Node;
 
 Node *cons(int, Node *);
-
 Node *seq(int, int, Node *);
-
+int length(Node *);
 void printlist(Node *);
 
 //////////
@@ -16,4 +15,4 @@ typedef int (*gp) (int, int);
 
 Node *map(fp, Node *);
 Node *filter(fp, Node *);
-Node *reduce(gp, Node *, Node *);
+int reduce(gp, int, Node *);

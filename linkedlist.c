@@ -20,8 +20,13 @@ Node *seq(int fst, int lst, Node *acc){
   }
 }
 
+int length(Node *n){
+  if (n == 0) return 0;
+  return 1 + length(n->next);
+}
+
 void printlist(Node *n){
-  if (n != NULL) {
+  if (n != 0) {
     printf("%d ", n->data);
     printlist(n->next);
   }
