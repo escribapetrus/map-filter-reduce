@@ -1,10 +1,6 @@
 #include "linkedlist.h"
+#include "functional.h"
 #include <stdio.h>
-
-int addThree(int);
-int isEven(int);
-
-////////////////////////
 
 int main(){
   Node *source = seq(0, 10, NULL);
@@ -14,8 +10,6 @@ int main(){
   return 0;
 }
 
-////////////////////////////////
-
 int addThree(int x) {
   return x + 3;
 }
@@ -23,5 +17,3 @@ int addThree(int x) {
 int isEven(int x) {
   return (x % 2) == 0;
 }
-
-////////////////////////////////
