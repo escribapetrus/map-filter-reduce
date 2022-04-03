@@ -27,12 +27,3 @@ void printlist(Node *n){
   }
   else printf("\n");
 }
-
-int main(){
-  Node *last = NULL;
-  Node *lis = seq(4, 8, last);
-
-  printlist(lis);
-
-  return 0;
-}
