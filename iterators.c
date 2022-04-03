@@ -1,4 +1,4 @@
-#include "linkedlist.h"
+#include "functional.h"
 
 Node *map(fp fp, Node *n){
   if (n == 0) return 0;
