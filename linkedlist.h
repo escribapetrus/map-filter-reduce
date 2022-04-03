@@ -15,5 +15,5 @@ typedef int (*fp) (int);
 typedef int (*gp) (int, int);
 
 Node *map(fp, Node *);
-Node *filter(fp, int *);
-Node *reduce(gp, int, int *);
+Node *filter(fp, Node *);
+Node *reduce(gp, Node *, Node *);
