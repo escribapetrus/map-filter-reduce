@@ -30,3 +30,4 @@ int reduce(gp, int, Node *);
 int isEven(int);
 int sum(int, int);
 int addThree(int);
+int sumTen(int, int);

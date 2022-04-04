@@ -2,14 +2,10 @@
 #include <stdio.h>
 
 int main(){
-  Node *source = seq(1, 10, NULL);
-  Node *mapped = map(&addThree,source);
-  Node *filtered = filter(&isEven, mapped);
-  int reduced = reduce(&sum, 0, source);
+  Node *source = seq(1, 5, NULL);
+  int reduced = reduce(&sumTen, 0, source);
   printf("source length: %d\n", length(source));
   printf("reduced: %d\n", reduced);
-  printf("sum 1..10 == %d\n", (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10));
-  printlist(source);
   return 0;
 }
 
@@ -23,4 +19,8 @@ int isEven(int x) {
 
 int sum(int x, int y){
   return x + y;
+}
+
+int sumTen(int x, int y){
+  return (x * 10) + y;
 }
