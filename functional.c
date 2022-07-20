@@ -2,10 +2,22 @@
 #include <stdio.h>
 
 int main(){
-  Node *source = seq(1, 5, NULL);
-  int reduced = reduce(&sumTen, 0, source);
-  printf("source length: %d\n", length(source));
-  printf("reduced: %d\n", reduced);
+  // define a source sequence to operate on: [1, 2, ..., 10]
+  Node *source = seq(1, 10, NULL);
+
+  printlist(source);
+  // map the function addThree to the source sequence
+  // the content of the source is preserved (immutability)
+  printlist(map(&addThree, source));
+
+  // filter the source sequency using the predicate function isEven
+  // predicate functions are functions that return a boolean value
+  printlist(filter(&isEven, source));
+
+  // reduce the source sequence by applying the sum function to every element and an accumulator
+  // the reduce function is also known as foldr
+  printf("%d\n", reduce(&sum, 0, source));
+
   return 0;
 }
 
@@ -19,8 +31,4 @@ int isEven(int x) {
 
 int sum(int x, int y){
   return x + y;
-}
-
-int sumTen(int x, int y){
-  return (x * 10) + y;
 }
